@@ -11,4 +11,5 @@ public interface IUserRepository {
     List<User> getAll();
     User addUser(User user) throws IOException;
     User getById(Integer id);
+    void deleteById(Integer id);
 }

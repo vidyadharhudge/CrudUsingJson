@@ -54,4 +54,22 @@ public class UserRepository implements IUserRepository {
        }
         return null;
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        User remove=null;
+        for (User u:userList){
+            if (u.getId()==id){
+                remove=u;
+            }
+        }
+        if (remove!=null){
+            userList.remove(remove);
+            try {
+                objectMapper.writeValue(new File("./src/main/resources/JSONData/UserDetails.json"),userList);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
