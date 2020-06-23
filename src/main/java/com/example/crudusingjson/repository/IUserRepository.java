@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface IUserRepository {
     List<User> getAll();
-    void addUser(User user) throws IOException;
+    User addUser(User user) throws IOException;
     User getById(Integer id);
 }

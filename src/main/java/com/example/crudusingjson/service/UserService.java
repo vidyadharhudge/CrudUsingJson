@@ -11,19 +11,16 @@ import java.util.List;
 @Service
 public class UserService{
 
-
     @Autowired
     private UserRepository userRepository;
-
 
     public List<User>getAll(){
         List<User>userList=userRepository.getAll();
         return userList;
     }
 
-    public void addUser(User user) throws IOException {
-       userRepository.addUser(user);
-
+    public User addUser(User user) throws IOException {
+      return userRepository.addUser(user);
     }
 
     public User getById(Integer id){

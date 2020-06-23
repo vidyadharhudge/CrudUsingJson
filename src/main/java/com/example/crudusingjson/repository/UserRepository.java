@@ -6,7 +6,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Repository;
-
 import java.io.*;
 import java.util.List;
 
@@ -40,9 +39,10 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public void addUser(User user) throws IOException {
+    public User addUser(User user) throws IOException {
        userList.add(user);
-       objectMapper.writeValue(new File("./src/main/resources/JSONData/UserDetails.json"),user);
+       objectMapper.writeValue(new File("./src/main/resources/JSONData/UserDetails.json"),userList);
+       return user;
     }
 
     @Override

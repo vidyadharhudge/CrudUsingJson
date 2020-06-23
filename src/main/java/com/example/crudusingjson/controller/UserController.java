@@ -20,9 +20,8 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public void addUser(@RequestBody User user) throws IOException {
-        userService.addUser(user);
-
+    public User addUser(@RequestBody User user) throws IOException {
+        return userService.addUser(user);
     }
 
     @GetMapping("/{id}")
