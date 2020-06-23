@@ -18,4 +18,10 @@ public class UserController {
     public List<User>userList(){
         return userService.getAll();
     }
+
+    @PostMapping("/add")
+    public User addUser(@RequestBody User user) throws IOException {
+        return userService.addUser(user);
+
+    }
 }

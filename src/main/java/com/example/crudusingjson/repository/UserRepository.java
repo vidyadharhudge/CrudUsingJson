@@ -38,4 +38,11 @@ public class UserRepository implements IUserRepository {
     public List<User> getAll() {
         return userList;
     }
+
+    @Override
+    public User addUser(User user) throws IOException {
+       userList.add(user);
+       objectMapper.writeValue(new File("./src/main/resources/JSONData/UserDetails.json"),user);
+       return user;
+    }
 }

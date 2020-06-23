@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface IUserRepository {
-
     List<User> getAll();
+    User addUser(User user) throws IOException;
 }
