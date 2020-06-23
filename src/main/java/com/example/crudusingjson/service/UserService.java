@@ -21,7 +21,12 @@ public class UserService{
         return userList;
     }
 
-    public User addUser(User user) throws IOException {
-       return userRepository.addUser(user);
+    public void addUser(User user) throws IOException {
+       userRepository.addUser(user);
+
+    }
+
+    public User getById(Integer id){
+         return userRepository.getById(id);
     }
 }

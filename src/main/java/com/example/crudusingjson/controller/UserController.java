@@ -20,8 +20,13 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public User addUser(@RequestBody User user) throws IOException {
-        return userService.addUser(user);
+    public void addUser(@RequestBody User user) throws IOException {
+        userService.addUser(user);
 
+    }
+
+    @GetMapping("/{id}")
+    public User getById(@PathVariable Integer id){
+        return userService.getById(id);
     }
 }
