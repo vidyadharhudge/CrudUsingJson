@@ -1,5 +1,4 @@
 package com.example.crudusingjson.repository;
-
 import com.example.crudusingjson.model.User;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -40,7 +39,7 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User addUser(User user) throws IOException {
-       userList.add(user);
+        userList.add(user);
        objectMapper.writeValue(new File("./src/main/resources/JSONData/UserDetails.json"),userList);
        return user;
     }

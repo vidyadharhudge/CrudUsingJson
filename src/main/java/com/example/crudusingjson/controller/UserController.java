@@ -23,6 +23,15 @@ public class UserController {
         return userService.addUser(user);
     }
 
+    @PutMapping("/{id}")
+    public User update(@RequestBody User user,@PathVariable Integer id) throws IOException {
+        User user1=userService.getById(id);
+        user1.setFirstName(user.getFirstName());
+        user1.setLastName(user.getLastName());
+        user1.setNumber(user.getNumber());
+        return userService.addUser(user1);
+    }
+
     @GetMapping("/{id}")
     public User getById(@PathVariable Integer id){
         return userService.getById(id);
