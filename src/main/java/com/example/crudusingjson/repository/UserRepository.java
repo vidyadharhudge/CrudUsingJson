@@ -39,9 +39,10 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User addUser(User user) throws IOException {
+        deleteById(user.getId());
         userList.add(user);
-       objectMapper.writeValue(new File("./src/main/resources/JSONData/UserDetails.json"),userList);
-       return user;
+        objectMapper.writeValue(new File("./src/main/resources/JSONData/UserDetails.json"),userList);
+        return user;
     }
 
     @Override

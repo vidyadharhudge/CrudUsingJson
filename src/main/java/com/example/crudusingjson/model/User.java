@@ -9,6 +9,13 @@ public class User {
     public User() {
     }
 
+    public User(Integer id, String firstName, String lastName, String number) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.number = number;
+    }
+
     public Integer getId() {
         return id;
     }
